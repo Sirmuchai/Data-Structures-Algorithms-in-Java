@@ -53,23 +53,46 @@ public class LearnArrays {
     return min;
   }
 
-  public static void main(String[] args) {
+  //Finding the second Max
+  public int secondMax(int[] arr){
+    if(arr==null || arr.length <2) {
+      throw new IllegalArgumentException("Invlaid Input");
+    }
 
-    int[] nums = {12,7,23};
+    int max = Integer.MIN_VALUE;
+    int secondMax = Integer.MIN_VALUE;
 
-    //Printing items in our array.
-    LearnArrays mynumbers = new LearnArrays();
-    mynumbers.printArray(nums);
+    for(int i=1; i<arr.length; i++){
+      if(arr[i]>max){
+        secondMax = max;
+        max = arr[i];
+      }
+      else if(arr[i]>secondMax && arr[i] != max){
+        secondMax = arr[i];
+      }
+    }
 
-
-    //Odd items in our array.
-    int[] results = mynumbers.removeEven(nums);
-    System.out.println(" ");
-    mynumbers.printArray(results);
-
-    //Reversed Array
-    mynumbers.reversedArray(nums, 0, nums.length-1);
-    System.out.println(" ");
-    mynumbers.printArray(nums);
+    return secondMax;
   }
+
+  //Making all zeros trail in an array
+
+  public int[] trailingZeros(int[] arr, int N) {
+    int j =0;
+    for(int i=0;i<N; i++){
+      if(arr[i]!=0 && arr[j]==0){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+      if(arr[j] != 0){
+        j++;
+      }
+
+    }
+    return arr;
+
+  }
+
+
 }
