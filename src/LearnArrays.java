@@ -91,15 +91,23 @@ public class LearnArrays {
     }
     return arr;
   }
-
+  //Resizing an array
   public int[] resize(int[] arr, int capacity){
     int[] temp = new int[capacity];
     for(int i=0;i<arr.length; i++){
       temp[i] = arr[i];
     }
     return temp;
-
   }
 
+  //Find missing number given an araay n-1
+  public int findMissingValue(int[] arr){
+    int n = arr.length +1;
+    int sum = n * (n+1)/2;
+    for(int item: arr){
+      sum = sum - item;
+    }
+    return sum;
+  }
 
 }
