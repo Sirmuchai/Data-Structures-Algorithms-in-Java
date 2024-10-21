@@ -28,5 +28,9 @@ public class Main {
     System.out.print("The second Max value is: ");
     System.out.println(mynumbers.secondMax(nums));
 
+    //Move the zero value to be trailing
+    System.out.print("The array with trailing zeros: ");
+    mynumbers.printArray(mynumbers.trailingZeros(nums, nums.length));
+
   }
 }
