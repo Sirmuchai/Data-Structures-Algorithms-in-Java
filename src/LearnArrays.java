@@ -41,6 +41,9 @@ public class LearnArrays {
 
   //Finding minimum value in an array
   public int findMin(int[] arr){
+    if(arr==null || arr.length == 0) {
+      throw new IllegalArgumentException("Invlaid Input");
+    }
     int min = arr[0];
     for(int i =1; i<arr.length; i++){
       if(arr[i]<min){
