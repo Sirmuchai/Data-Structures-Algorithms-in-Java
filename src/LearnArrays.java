@@ -76,10 +76,9 @@ public class LearnArrays {
   }
 
   //Making all zeros trail in an array
-
   public int[] trailingZeros(int[] arr, int N) {
-    int j =0;
-    for(int i=0;i<N; i++){
+    int j =0; //focus on the zeorth element
+    for(int i=0;i<N; i++){ // i will focus on non zeroth element
       if(arr[i]!=0 && arr[j]==0){
         int temp = arr[i];
         arr[i] = arr[j];
@@ -91,6 +90,14 @@ public class LearnArrays {
 
     }
     return arr;
+  }
+
+  public int[] resize(int[] arr, int capacity){
+    int[] temp = new int[capacity];
+    for(int i=0;i<arr.length; i++){
+      temp[i] = arr[i];
+    }
+    return temp;
 
   }
 

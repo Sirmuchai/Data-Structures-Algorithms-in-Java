@@ -32,5 +32,11 @@ public class Main {
     System.out.print("The array with trailing zeros: ");
     mynumbers.printArray(mynumbers.trailingZeros(nums, nums.length));
 
+    //Resizing array to size 10
+    System.out.print("Resized array: ");
+    mynumbers.printArray(mynumbers.resize(nums, 10));
+
+
+
   }
 }
