@@ -36,6 +36,12 @@ public class Main {
     System.out.print("Resized array: ");
     mynumbers.printArray(mynumbers.resize(nums, 10));
 
+    // Check string palidrome
+    String first_word = "madam";
+    String second_word = "that";
+    System.out.println("The word => " + first_word + " is a palidrome? " + mynumbers.checkPalidrome(first_word));
+    System.out.println("The word => " + second_word + " is a palidrome? " +mynumbers.checkPalidrome(second_word));
+
 
 
   }

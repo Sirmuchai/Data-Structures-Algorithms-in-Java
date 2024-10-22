@@ -110,4 +110,19 @@ public class LearnArrays {
     return sum;
   }
 
+  //Find if a string is a Palidrome
+  public boolean checkPalidrome(String word){
+    char[] wordCharacter = word.toCharArray();
+    int start = 0;
+    int end = word.length() -1;
+    while(start<end){
+      if(wordCharacter[start]!=wordCharacter[end]){
+        return false;
+      }
+      start++;
+      end--;
+    }
+    return true;
+  }
+
 }
