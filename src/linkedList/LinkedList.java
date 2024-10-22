@@ -14,5 +14,20 @@ public class LinkedList {
     }
   }
 
+  public static void main(String[] args) {
+    //Single LinkedList
+    LinkedList singleLinkedList = new LinkedList();
+
+    singleLinkedList.head = new ListNode(13);
+    ListNode second = new ListNode(8);
+    ListNode third = new ListNode(5);
+    ListNode fourth = new ListNode(3);
+
+    singleLinkedList.head = second;
+    second.next = third;
+    third.next = fourth;
+
+  }
+
 
 }
