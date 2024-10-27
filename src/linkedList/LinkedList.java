@@ -14,6 +14,15 @@ public class LinkedList {
     }
   }
 
+  public void printList(ListNode head){
+    ListNode current = head;
+    while ( current != null){
+      System.out.print(current.data + " => ");
+      current = current.next;
+    }
+    System.out.println("Null");
+  }
+
   public static void main(String[] args) {
     //Single LinkedList
     LinkedList singleLinkedList = new LinkedList();
@@ -23,9 +32,11 @@ public class LinkedList {
     ListNode third = new ListNode(5);
     ListNode fourth = new ListNode(3);
 
-    singleLinkedList.head = second;
+    singleLinkedList.head.next = second;
     second.next = third;
     third.next = fourth;
+
+   singleLinkedList.printList(singleLinkedList.head);
 
   }
 
