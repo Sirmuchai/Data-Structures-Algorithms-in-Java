@@ -23,9 +23,21 @@ public class LinkedList {
     System.out.println("Null");
   }
 
+  //Finding Length of a linked list
+  public int length(ListNode head){
+    ListNode current = head;
+    int count =0;
+    while(current != null){
+        current = current.next;
+        count++;
+    }
+    return count;
+  }
+
   public static void main(String[] args) {
     //Single LinkedList
     LinkedList singleLinkedList = new LinkedList();
+    LinkedList emptyList = new LinkedList();
 
     singleLinkedList.head = new ListNode(13);
     ListNode second = new ListNode(8);
@@ -37,6 +49,9 @@ public class LinkedList {
     third.next = fourth;
 
    singleLinkedList.printList(singleLinkedList.head);
+   singleLinkedList.printList(emptyList.head);
+
+    System.out.println(singleLinkedList.length(emptyList.head));
 
   }
 
