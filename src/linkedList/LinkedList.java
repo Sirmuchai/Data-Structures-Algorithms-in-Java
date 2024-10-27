@@ -14,6 +14,7 @@ public class LinkedList {
     }
   }
 
+  //Printing a linked List data
   public void printList(ListNode head){
     ListNode current = head;
     while ( current != null){
