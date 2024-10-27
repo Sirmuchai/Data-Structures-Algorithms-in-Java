@@ -35,6 +35,22 @@ public class LinkedList {
     return count;
   }
 
+  // Searching  if data exist in a linked list
+  public boolean search(ListNode node,  int data){
+    ListNode current = node;
+    if(current == null){
+      return false;
+    }
+    while(current != null){
+      if(data == current.data){
+        return true;
+      }
+      current = current.next;
+    }
+    return false;
+
+  }
+
   public static void main(String[] args) {
     //Single LinkedList
     LinkedList singleLinkedList = new LinkedList();
@@ -52,7 +68,8 @@ public class LinkedList {
    singleLinkedList.printList(singleLinkedList.head);
    singleLinkedList.printList(emptyList.head);
 
-    System.out.println(singleLinkedList.length(emptyList.head));
+   System.out.println(singleLinkedList.length(emptyList.head));
+    System.out.println(singleLinkedList.search(singleLinkedList.head, 50));
 
   }
 
