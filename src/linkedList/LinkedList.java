@@ -51,7 +51,8 @@ public class LinkedList {
   //Inserting after a node
   public void insertAfterNode(ListNode node, ListNode newNode){
     if (node == null){
-      node = newNode;
+      newNode.next = head;
+      head = newNode;
     }
     else if(node.next == null){
       node.next = newNode;
