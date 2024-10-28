@@ -83,7 +83,6 @@ public class LinkedList {
   }
 
   //Insert at the begining of the List
-
   public void insertFirst(int data){
     //create the node to be added
     ListNode newNode = new ListNode(data);
@@ -91,6 +90,27 @@ public class LinkedList {
     newNode.next = head;
     head = newNode;
     return;
+  }
+
+  //Insert at given position in a list
+  public void insert(int data, int position) {
+    // create the new node and assign the data to it.
+    ListNode newNode = new ListNode(data);
+    //Adding to the head
+    if (position == 1) {
+      newNode.next = head;
+      head = newNode;
+    } else {
+      ListNode previous = head;
+      int count = 1;
+      while (count < position - 1) {
+        previous = previous.next;
+        count++;
+      }
+      ListNode current = previous.next;
+      newNode.next = current;
+      previous.next = newNode;
+    }
   }
 
   public static void main(String[] args) {
@@ -145,6 +165,19 @@ public class LinkedList {
     // Insert after a node
     singleLinkedList.insertFirst(78);
     singleLinkedList.printList(singleLinkedList.head);
+
+    // Insert after a node a position 1
+    singleLinkedList.insert(32,1 );
+    singleLinkedList.printList(singleLinkedList.head);
+
+    // Insert after a node a position 3
+    singleLinkedList.insert(58,3 );
+    singleLinkedList.printList(singleLinkedList.head);
+
+    // Insert after a node a position 11 which does not exist
+    singleLinkedList.insert(41,11 );
+    singleLinkedList.printList(singleLinkedList.head);
+
 
   }
 
