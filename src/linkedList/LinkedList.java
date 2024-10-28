@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.List;
+
 public class LinkedList {
 
   private ListNode head;
@@ -80,6 +82,17 @@ public class LinkedList {
 
   }
 
+  //Insert at the begining of the List
+
+  public void insertFirst(int data){
+    //create the node to be added
+    ListNode newNode = new ListNode(data);
+    // insert when head is null
+    newNode.next = head;
+    head = newNode;
+    return;
+  }
+
   public static void main(String[] args) {
     //Single LinkedList
     LinkedList singleLinkedList = new LinkedList();
@@ -112,7 +125,10 @@ public class LinkedList {
    singleLinkedList.insertAfterNode(fourth, last);
    singleLinkedList.printList(singleLinkedList.head);
 
-  // Insert in an empty List
+    emptyList.insertFirst(78);
+    emptyList.printList(emptyList.head);
+
+   // Insert in an empty List
    emptyList.insertAfterNode(emptyList.head, last1);
    emptyList.printList(emptyList.head);
 
@@ -125,6 +141,10 @@ public class LinkedList {
    // Insert after a node
    singleLinkedList.insertAfterNode(second, fifth);
    singleLinkedList.printList(singleLinkedList.head);
+
+    // Insert after a node
+    singleLinkedList.insertFirst(78);
+    singleLinkedList.printList(singleLinkedList.head);
 
   }
 
