@@ -64,6 +64,22 @@ public class LinkedList {
     }
   }
 
+  // Insert at the end of a list
+  public void insertLast(int data){
+    ListNode newNode = new ListNode(data);
+    if(head == null) {
+      newNode.next = head;
+      head = newNode;
+      return;
+    }
+    ListNode current = head;
+    while(current.next != null){
+      current = current.next;
+    }
+    current.next = newNode;
+
+  }
+
   public static void main(String[] args) {
     //Single LinkedList
     LinkedList singleLinkedList = new LinkedList();
@@ -99,6 +115,12 @@ public class LinkedList {
   // Insert in an empty List
    emptyList.insertAfterNode(emptyList.head, last1);
    emptyList.printList(emptyList.head);
+
+    // Insert in an empty List
+    emptyList.insertLast(8);
+    emptyList.printList(emptyList.head);
+    emptyList.insertLast(9);
+    emptyList.printList(emptyList.head);
 
    // Insert after a node
    singleLinkedList.insertAfterNode(second, fifth);
