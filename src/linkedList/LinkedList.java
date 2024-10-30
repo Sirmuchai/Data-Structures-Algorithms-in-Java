@@ -143,6 +143,26 @@ public class LinkedList {
     return current;
   }
 
+  // Delete at a given position
+  public ListNode delete(int position){
+    ListNode current = head;
+    if(position == 1){
+      head = current.next;
+      return current;
+    }
+    ListNode previous = null;
+    int count  = 0;
+    while (count < position-1){
+      previous = current;
+      current = current.next;
+      count ++;
+    }
+    previous.next = current.next;
+    current.next = null;
+    return current;
+  }
+
+
   public static void main(String[] args) {
     //Single LinkedList
     LinkedList singleLinkedList = new LinkedList();
@@ -212,7 +232,13 @@ public class LinkedList {
     System.out.println("We have remove the first node that had data as: "+ singleLinkedList.deleteStart().data);
     singleLinkedList.printList(singleLinkedList.head);
 
+
+    // Delete node at position { }
+    System.out.println("We have remove the node at position { } "+ singleLinkedList.delete(5).data);
+    singleLinkedList.printList(singleLinkedList.head);
+
     // Delete first node
+    System.out.println("-----------------");
     emptyList.printList(emptyList.head);
     System.out.println("We have remove the last node that had data as: "+ emptyList.deleteLast().data);
     emptyList.printList(emptyList.head);
