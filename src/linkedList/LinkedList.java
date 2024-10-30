@@ -127,13 +127,20 @@ public class LinkedList {
   //Remove last node
   public ListNode deleteLast(){
     if(head == null){
-      return null;
+      return head;
     }
+    ListNode previous = null;
     ListNode current = head;
-    while (current.next.next!=null){
+    if ( head.next == null) {
+      head = null;
+      return head;
+    }
+    while(current.next != null){
+      previous = current;
       current = current.next;
     }
-    return current.next;
+    previous.next = null;
+    return current;
   }
 
   public static void main(String[] args) {
@@ -206,8 +213,20 @@ public class LinkedList {
     singleLinkedList.printList(singleLinkedList.head);
 
     // Delete first node
+    emptyList.printList(emptyList.head);
     System.out.println("We have remove the last node that had data as: "+ emptyList.deleteLast().data);
     emptyList.printList(emptyList.head);
+
+    System.out.println("We have remove the last node that had data as: "+ emptyList.deleteLast().data);
+    emptyList.printList(emptyList.head);
+
+    System.out.println("We have remove the last node that had data as: "+ emptyList.deleteLast().data);
+    emptyList.printList(emptyList.head);
+
+    System.out.println("We have remove the last node that had data as: "+ emptyList.deleteLast());
+    emptyList.printList(emptyList.head);
+
+
 
   }
 }
