@@ -113,6 +113,29 @@ public class LinkedList {
     }
   }
 
+  //Remove start node
+  public ListNode deleteStart(){
+    if (head == null){
+      return null;
+    }
+    ListNode current = head;
+    head = head.next;
+    current.next = null;
+    return current;
+  }
+
+  //Remove last node
+  public ListNode deleteLast(){
+    if(head == null){
+      return null;
+    }
+    ListNode current = head;
+    while (current.next.next!=null){
+      current = current.next;
+    }
+    return current.next;
+  }
+
   public static void main(String[] args) {
     //Single LinkedList
     LinkedList singleLinkedList = new LinkedList();
@@ -175,11 +198,16 @@ public class LinkedList {
     singleLinkedList.printList(singleLinkedList.head);
 
     // Insert after a node a position 11 which does not exist
-    singleLinkedList.insert(41,11 );
+    singleLinkedList.insert(41,1 );
     singleLinkedList.printList(singleLinkedList.head);
 
+    // Delete first node
+    System.out.println("We have remove the first node that had data as: "+ singleLinkedList.deleteStart().data);
+    singleLinkedList.printList(singleLinkedList.head);
+
+    // Delete first node
+    System.out.println("We have remove the last node that had data as: "+ emptyList.deleteLast().data);
+    emptyList.printList(emptyList.head);
 
   }
-
-
 }
