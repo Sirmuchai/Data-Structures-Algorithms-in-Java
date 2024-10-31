@@ -38,8 +38,8 @@ public class LinkedList {
   }
 
   // Searching  if data exist in a linked list
-  public boolean search(ListNode node,  int data){
-    ListNode current = node;
+  public boolean search(int data){
+    ListNode current = head;
     while(current != null){
       if(data == current.data){
         return true;
@@ -182,8 +182,8 @@ public class LinkedList {
 
    System.out.println(singleLinkedList.length(emptyList.head));
 
-   System.out.println(singleLinkedList.search(singleLinkedList.head, 5));
-   System.out.println(singleLinkedList.search(emptyList.head, 1));
+   System.out.println(singleLinkedList.search(5));
+   System.out.println(singleLinkedList.search( 1));
 
    ListNode fifth = new ListNode(7);
    ListNode last = new ListNode(23);
@@ -219,7 +219,7 @@ public class LinkedList {
     singleLinkedList.printList(singleLinkedList.head);
 
     // Insert after a node a position 3
-    singleLinkedList.insert(58,3 );
+    singleLinkedList.insert(45,3 );
     singleLinkedList.printList(singleLinkedList.head);
 
     // Insert after a node a position 11 which does not exist
