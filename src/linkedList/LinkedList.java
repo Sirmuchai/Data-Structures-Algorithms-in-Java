@@ -145,20 +145,18 @@ public class LinkedList {
 
   // Delete at a given position
   public ListNode delete(int position){
-    ListNode current = head;
     if(position == 1){
-      head = current.next;
-      return current;
+      head = head.next;
+      return head;
     }
-    ListNode previous = null;
-    int count  = 0;
+    ListNode previous = head;
+    int count  = 1;
     while (count < position-1){
-      previous = current;
-      current = current.next;
+      previous = previous.next;
       count ++;
     }
+    ListNode current = previous.next;
     previous.next = current.next;
-    current.next = null;
     return current;
   }
 
