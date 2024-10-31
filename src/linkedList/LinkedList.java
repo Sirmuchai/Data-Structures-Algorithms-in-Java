@@ -232,7 +232,7 @@ public class LinkedList {
 
 
     // Delete node at position { }
-    System.out.println("We have remove the node at position { } "+ singleLinkedList.delete(5).data);
+    System.out.println("We have remove the node at position { } "+ singleLinkedList.delete(8).data);
     singleLinkedList.printList(singleLinkedList.head);
 
     // Delete first node
