@@ -1,5 +1,6 @@
 package linkedList;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.List;
 
 public class LinkedList {
@@ -160,6 +161,20 @@ public class LinkedList {
     return current;
   }
 
+  //Reversing a single linked list
+  public ListNode reverse(){
+    ListNode current = head;
+    ListNode previous = null;
+    ListNode next = null;
+    while(current != null){
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    return previous;
+  }
+
 
   public static void main(String[] args) {
     //Single LinkedList
@@ -226,6 +241,11 @@ public class LinkedList {
     singleLinkedList.insert(41,1 );
     singleLinkedList.printList(singleLinkedList.head);
 
+    //Reverse the List
+    singleLinkedList.head = singleLinkedList.reverse();
+    System.out.print("Reversed List is: => ");
+    singleLinkedList.printList(singleLinkedList.head);
+
     // Delete first node
     System.out.println("We have remove the first node that had data as: "+ singleLinkedList.deleteStart().data);
     singleLinkedList.printList(singleLinkedList.head);
@@ -249,7 +269,6 @@ public class LinkedList {
 
     System.out.println("We have remove the last node that had data as: "+ emptyList.deleteLast());
     emptyList.printList(emptyList.head);
-
 
 
   }
