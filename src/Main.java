@@ -13,9 +13,15 @@ public class Main {
     System.out.println("Linked list is empty? "+ dll.isEmpty());
 
     //insert to the list
-    dll.insert(1);
-    dll.insert(2);
+    dll.insertLast(1);
+    dll.insertLast(2);
+    dll.insertLast(3);
+
+    //Check lenfth after inserting
     System.out.println(dll.length());
+
+    //print the list forward
+    dll.printForward();
 
 
   }

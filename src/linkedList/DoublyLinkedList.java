@@ -34,19 +34,34 @@ public class DoublyLinkedList {
   }
 
   // Inserting data to a doubly linked list
-  public void insert(int data){
+  public void insertLast(int data){
     Node newNode = new Node(data);
-
     //checks if the list is empty
     if(isEmpty()){
       head = newNode;
     }else{
-      tail = newNode;
+      tail.next = newNode;
     }
     newNode.previous = tail;
     tail = newNode;
     length++;
   }
+
+  //Print List forward
+
+  public void printForward(){
+    if(head == null){
+      return;
+    }
+    Node current = head;
+    while (current != null){
+      System.out.print(current.data + " --> ");
+      current = current.next;
+    }
+    System.out.print("NULL");
+  }
+
+
 
 
 
