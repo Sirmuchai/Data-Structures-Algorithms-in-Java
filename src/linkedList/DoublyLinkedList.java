@@ -7,7 +7,7 @@ public class DoublyLinkedList {
   private int length;
 
 
-  public static class Node{
+  public class Node{
     private int data;
     private Node previous;
     private Node next;
@@ -30,4 +30,12 @@ public class DoublyLinkedList {
   public int length(){
     return length;
   }
+
+  public static void main(String[] args) {
+    DoublyLinkedList dll = new DoublyLinkedList();
+
+  }
 }
+
+
+
