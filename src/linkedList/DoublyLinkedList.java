@@ -23,18 +23,34 @@ public class DoublyLinkedList {
     this.length = 0;
   }
 
+  // Method to check if the list empty
   public boolean isEmpty(){
     return length == 0;
   }
 
+  // Method to return lenfth of our linked list
   public int length(){
     return length;
   }
 
-  public static void main(String[] args) {
-    DoublyLinkedList dll = new DoublyLinkedList();
+  // Inserting data to a doubly linked list
+  public void insert(int data){
+    Node newNode = new Node(data);
 
+    //checks if the list is empty
+    if(isEmpty()){
+      head = newNode;
+    }else{
+      tail = newNode;
+    }
+    newNode.previous = tail;
+    tail = newNode;
+    length++;
   }
+
+
+
+
 }
 
 
