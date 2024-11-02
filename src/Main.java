@@ -17,6 +17,7 @@ public class Main {
     dll.insertLast(2);
     dll.insertLast(3);
 
+
     //Check lenfth after inserting
     System.out.println(dll.length());
 
@@ -27,6 +28,9 @@ public class Main {
     dll.insertStart(0);
     dll.insertStart(-1);
     dll.insertStart(-2);
+
+    //insert to the list
+    dll.insertLast(4);
 
     //print the list forward
     System.out.println();
