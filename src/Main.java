@@ -26,6 +26,7 @@ public class Main {
     //Insert at the start
     dll.insertStart(0);
     dll.insertStart(-1);
+    dll.insertStart(-2);
 
     //print the list forward
     System.out.println();
