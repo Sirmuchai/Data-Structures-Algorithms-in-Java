@@ -23,6 +23,7 @@ public class DoublyLinkedList {
     this.length = 0;
   }
 
+
   // Method to check if the list empty
   public boolean isEmpty(){
     return length == 0;
@@ -47,8 +48,23 @@ public class DoublyLinkedList {
     length++;
   }
 
-  //Print List forward
+  //Insert at the start of a DLL
 
+  public void insertStart(int data){
+    Node newNode = new Node(data);
+    //check if the list is empty
+    if(isEmpty()){
+      tail = newNode;
+    }
+    else{
+      head.previous = newNode;
+    }
+    newNode.next =head ;
+    head = newNode;
+    length++;
+  }
+
+  //Print List forward
   public void printForward(){
     if(head == null){
       return;

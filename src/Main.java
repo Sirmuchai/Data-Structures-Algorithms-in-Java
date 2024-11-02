@@ -23,6 +23,13 @@ public class Main {
     //print the list forward
     dll.printForward();
 
+    //Insert at the start
+    dll.insertStart(0);
+    dll.insertStart(-1);
+
+    //print the list forward
+    System.out.println();
+    dll.printForward();
 
   }
 }
