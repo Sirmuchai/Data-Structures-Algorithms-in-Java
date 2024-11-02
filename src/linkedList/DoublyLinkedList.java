@@ -42,8 +42,8 @@ public class DoublyLinkedList {
       head = newNode;
     }else{
       tail.next = newNode;
+      newNode.previous = tail;
     }
-    newNode.previous = tail;
     tail = newNode;
     length++;
   }
@@ -58,8 +58,8 @@ public class DoublyLinkedList {
     }
     else{
       head.previous = newNode;
+      newNode.next =head ;
     }
-    newNode.next =head ;
     head = newNode;
     length++;
   }
