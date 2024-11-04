@@ -94,6 +94,22 @@ public class DoublyLinkedList {
     return current;
   }
 
+  public Node deleteLast(){
+    if(isEmpty()){
+      throw new NoSuchElementException();
+    }
+
+    Node current = tail;
+    if (head == tail){
+      head = null;
+    }else{
+      tail.previous.next = null;
+    }
+    tail =  current.previous;
+    tail.next = null;
+    return current;
+  }
+
 }
 
 

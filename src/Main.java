@@ -39,7 +39,14 @@ public class Main {
     //Delete first node
    dll.deleteFirst();
    System.out.println("DLL after deleting node 1" );
+   dll.printForward();
+
+    //Delete last node
+    dll.deleteLast();
+    System.out.println("DLL after deleting last node" );
     dll.printForward();
+
+
 
 
   }
