@@ -37,8 +37,8 @@ public class Main {
     dll.printForward();
 
     //Delete first node
-    System.out.println(" ");
-    dll.deleteFirst();
+   dll.deleteFirst();
+   System.out.println("DLL after deleting node 1" );
     dll.printForward();
 
 

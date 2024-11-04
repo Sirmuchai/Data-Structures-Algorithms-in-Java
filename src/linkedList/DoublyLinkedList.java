@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.NoSuchElementException;
+
 public class DoublyLinkedList {
 
   private Node head;
@@ -77,14 +79,19 @@ public class DoublyLinkedList {
   }
 
   //Delete first value in a DLL
-  public void deleteFirst(){
-    if(head == null){
-      return;
+  public Node deleteFirst(){
+    if(isEmpty()){
+      throw new NoSuchElementException();
     }
     Node current = head;
-    head = current.next;
-    head.previous = null;
+    if(head == tail){
+      tail = null;
+    }else{
+      head.next.previous = null;
+    }
+    head = head.next;
     current.next = null;
+    return current;
   }
 
 
