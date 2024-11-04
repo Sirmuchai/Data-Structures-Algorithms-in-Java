@@ -94,7 +94,7 @@ public class DoublyLinkedList {
     return current;
   }
 
-  public Node deleteLast(){
+  public void deleteLast(){
     if(isEmpty()){
       throw new NoSuchElementException();
     }
@@ -107,7 +107,6 @@ public class DoublyLinkedList {
     }
     tail =  current.previous;
     tail.next = null;
-    return current;
   }
 
 }
