@@ -36,5 +36,11 @@ public class Main {
     System.out.println();
     dll.printForward();
 
+    //Delete first node
+    System.out.println(" ");
+    dll.deleteFirst();
+    dll.printForward();
+
+
   }
 }

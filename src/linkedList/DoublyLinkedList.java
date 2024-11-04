@@ -49,7 +49,6 @@ public class DoublyLinkedList {
   }
 
   //Insert at the start of a DLL
-
   public void insertStart(int data){
     Node newNode = new Node(data);
     //check if the list is empty
@@ -75,6 +74,17 @@ public class DoublyLinkedList {
       current = current.next;
     }
     System.out.print("NULL");
+  }
+
+  //Delete first value in a DLL
+  public void deleteFirst(){
+    if(head == null){
+      return;
+    }
+    Node current = head;
+    head = current.next;
+    head.previous = null;
+    current.next = null;
   }
 
 
