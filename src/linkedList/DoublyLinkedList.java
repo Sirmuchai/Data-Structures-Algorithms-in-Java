@@ -9,8 +9,8 @@ public class DoublyLinkedList {
   private int length;
 
 
-  private class Node{
-    private int data;
+  private static class Node{
+    private final int data;
     private Node previous;
     private Node next;
 
@@ -93,7 +93,6 @@ public class DoublyLinkedList {
     current.next = null;
     return current;
   }
-
 
 }
 
