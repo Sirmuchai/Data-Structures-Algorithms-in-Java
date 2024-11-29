@@ -1,4 +1,5 @@
 import linkedList.DoublyLinkedList;
+import otp.OtpService;
 
 public class Main {
   public static void main(String[] args) {
@@ -46,7 +47,10 @@ public class Main {
     System.out.println("DLL after deleting last node" );
     dll.printForward();
 
+    OtpService otpService = new OtpService();
 
+
+    System.out.println("My OTP is: "+ otpService.otpGeneration());
 
 
   }
